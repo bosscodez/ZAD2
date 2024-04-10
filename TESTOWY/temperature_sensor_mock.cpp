@@ -2,14 +2,11 @@
 #include <vector>
 
 void MCKTemperatureSensor::setTemperatures(std::vector<int> testTemp) {
-	testTemperatures = testTemp;
+	this->i = 0;
+	this->testTemperatures.clear();
+	this->testTemperatures = testTemp;
 }
 
 int MCKTemperatureSensor::getTemperature() {
-	return testTemperatures[i++];
-}
-
-void MCKTemperatureSensor::resetState() {
-	i = 0;
-	testTemperatures.clear();
+	return this->testTemperatures[i++];
 }

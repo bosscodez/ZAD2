@@ -6,13 +6,13 @@
 class ValveController : public IValveController
 {
 public:
-    virtual void setTempSensor(ITemperatureSensor* temperatureSensor) override;
+    virtual void setTempSensor(ITemperatureSensor* tempSensor) override;
     virtual void setExpectedTemp(int expectedTemp) override;
     virtual bool openValve() override;
 private:
-    ITemperatureSensor* tempSensor_ = nullptr;
-    int expectedTemp_;
-    bool lastState_;
+    ITemperatureSensor* tempSensor = nullptr;
+    int expectedTemp;
+    bool lastState;
 };
 
 #endif // VALVE_CONTROLLER_IF_H

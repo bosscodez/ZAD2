@@ -2,5 +2,5 @@
 #include <vector>
 
 int UTTemperatureSensor::getTemperature() {
-	return testTemperatures[i++];
+	return this->testTemperatures[i++];
 }

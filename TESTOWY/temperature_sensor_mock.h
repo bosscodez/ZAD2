@@ -9,7 +9,6 @@ class MCKTemperatureSensor : public ITemperatureSensor
 public:
     int getTemperature() override;
     void setTemperatures(std::vector<int>);
-    void resetState();
 private:
     std::vector<int> testTemperatures;
     int i = 0;

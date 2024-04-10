@@ -1,27 +1,27 @@
 #include "../PRODUKCYJNY/valve_controller.h"
 
-void ValveController::setTempSensor(ITemperatureSensor* temperatureSensor)
+void ValveController::setTempSensor(ITemperatureSensor* tempSensor)
 {
-	tempSensor_ = temperatureSensor;
+	this->tempSensor = tempSensor;
 }
 
 void ValveController::setExpectedTemp(int expectedTemp)
 {
-	expectedTemp_ = expectedTemp;
+	this->expectedTemp = expectedTemp;
 }
 
 bool ValveController::openValve()
 {
-	int currentTemperature = tempSensor_->getTemperature();
-	if (currentTemperature < expectedTemp_) {
-		lastState_ = true;
+	int currentTemperature = this->tempSensor->getTemperature();
+	if (currentTemperature < this->expectedTemp) {
+		this->lastState = true;
 		return true;
 	}
-	else if (currentTemperature > expectedTemp_) {
-		lastState_ = false;
+	else if (currentTemperature > this->expectedTemp) {
+		this->lastState = false;
 		return false;
 	}
 	else {
-		return lastState_;
+		return this->lastState;
 	}
 }
